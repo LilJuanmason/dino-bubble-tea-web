@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Bubble Tea </title>
+    <meta name="description"
+        content="Dino Bubble Tea (Centro) - El mejor boba y té de tapioca en Toluca. Refrescante, dulce y delicioso.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Dino <span class="highlight">Bubble Tea</span></a>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in-up">
+            <h1 class="hero-title">Refrescante y <br> <span class="text-gold">Delicioso</span></h1>
+            <p class="hero-text">El mejor té de tapioca y bebidas estilo asiático en Toluca.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Ver Menú</a>
+                <a href="#contact" class="btn btn-outline">Pedidos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Nuestra Historia</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text fade-in-left">
+                    <p><strong>Dino Bubble Tea</strong> nace de la pasión por ofrecer las mejores bebidas a base de té y tapioca en el corazón de Toluca.</p>
+                    <p>Nuestra misión es refrescarte el día con sabores vibrantes, combinaciones creativas y un toque de dulzura asiática, usando siempre ingredientes frescos y naturales.
+                    </p>
+
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <i class="fas fa-heart"></i>
+                            <h3>Pasión</h3>
+                            <p>El cliente es nuestra razón de ser.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-award"></i>
+                            <h3>Calidad</h3>
+                            <p>Higiene y los mejores ingredientes.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-users"></i>
+                            <h3>Familia</h3>
+                            <p>Un ambiente digno y confiable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image-container fade-in-right">
+                    <img src="https://tb-static.uber.com/prod/image-proc/processed_images/580d154f3b5e5d63789dcc60c7972020/bc9c318a9c96996e2d990faf2b0c65f6.jpeg" alt="Mixed Nutella Fresa"
+                        style="width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section menu-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-subtitle">Descubre nuestros sabores</p>
+                <h2 class="section-title">Nuestro Menú</h2>
+                <div class="separator"></div>
+            </div>
+
+            <div class="menu-filters fade-in">
+                <button class="filter-btn active" data-filter="favoritos">Favoritos</button>
+                <button class="filter-btn" data-filter="base-leche">Base Leche</button>
+                <button class="filter-btn" data-filter="base-te">Base Té</button>
+                <button class="filter-btn" data-filter="base-yogurt">Base Yogurt</button>
+                <button class="filter-btn" data-filter="bases-especiales">Especiales</button>
+            </div>
+
+            <div class="menu-grid" id="menu-container">
+                <!-- Menu items will be injected via JS -->
+            </div>
+
+            <div class="menu-note fade-in">
+                <p>* Precios sujetos a cambio. </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Taquizas -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Servicios</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="services-content fade-in-up">
+                <div class="service-card">
+                    <i class="fas fa-bag-shopping"></i>
+                    <h3>Pide y Recoge</h3>
+                    <p>Haz tu pedido con anticipación y pasa a recogerlo sin filas. Disfruta de la mejor calidad al instante.</p>
+                    <a href="#menu" class="btn btn-text">Ordenar Ahora <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>Pedidos por WhatsApp</h3>
+                    <p>Escríbenos, armamos tu pedido personalizado y pasas a recogerlo. ¡Fácil y rápido!</p>
+                    <a href="https://wa.me/7226878583" target="_blank" class="btn btn-text">Contactar Ahora <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="contact-location" style="margin-bottom: 60px;">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Encuéntranos</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="map-card fade-in-up">
+                    <div class="map-container" style="height: 350px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.1952211904484!2d-99.65588370000001!3d19.284249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd898e3b2b7355%3A0xe542d99d300adfc2!2sIgnacio%20L.%20Rayon%20Sur%20511%2C%2050000%20Toluca%20de%20Lerdo%2C%20M%C3%A9x.%2C%20Mexico!5e0!3m2!1sen!2sus!4v1708449091934!5m2!1sen!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="map-info">
+                        <h3>Nuestra Ubicación</h3>
+                        <p>Ignacio López Rayon 511, Centro, Toluca de Lerdo.</p>
+                        <a href="https://maps.google.com/?q=Ignacio+López+Rayon+511+Toluca"
+                            target="_blank" class="btn btn-text">Ver en Google Maps <i
+                                class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>Dino Bubble Tea</h3>
+                    <div class="contact-details">
+                        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/7226878583" target="_blank">722-687-8583</a></p>
+                    </div>
+                </div>
+                <div class="footer-hours">
+                    <h4>Horario</h4>
+                    <p>Lunes - Domingo</p>
+                    <p>12:00 PM - 07:30 PM</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100063848543823" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/dino_bubbletea/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dino Bubble Tea. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Button -->
+    <div class="cart-btn" id="cart-btn">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Pedido</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items injected by JS -->
+            <div class="empty-cart-msg">Tu carrito está vacío</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block checkout-btn" id="checkout-btn">
+                <i class="fab fa-whatsapp"></i> Hacer Pedido
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Agregado al carrito</div>
+
+    <!-- Options Modal -->
+    <div class="modal-overlay" id="options-modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Elige una opción</h3>
+            <div class="modal-options" id="modal-options-container">
+                <!-- Options injected by JS -->
+            </div>
+            <button class="btn-cancel" onclick="closeOptionsModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

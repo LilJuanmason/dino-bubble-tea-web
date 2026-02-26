@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Pendiente - Dino Bubble Tea</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .pending-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--bg-color);
+        }
+
+        .pending-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .pending-icon {
+            font-size: 5rem;
+            color: #f39c12;
+            /* Warning orange */
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="pending-container">
+        <div class="pending-card">
+            <i class="fas fa-clock pending-icon"></i>
+            <h1 style="color: var(--text-dark); margin-bottom: 1rem;">Pago en Proceso</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Tu pago está siendo procesado por Mercado Pago
+                (OXXO, Transferencia, etc).</p>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">Una vez que se acredite,
+                recibirás el código QR de confirmación por WhatsApp para recoger tu pedido.</p>
+
+            <a href="index.html" class="primary-btn" style="text-decoration: none; display: inline-block;">Volver al
+                Menú</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
