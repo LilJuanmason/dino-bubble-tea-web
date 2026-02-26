@@ -86,24 +86,21 @@ export default async function handler(req, res) {
         const orderId = newOrder.id;
 
         // 3. Create Mercado Pago Preference
-        // We pass the orderId in external_reference so the webhook knows which order to update
-        const siteUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'; // Or whatever local port running
-
-        // For local testing without Vercel local dev, let's just use placeholder URLs
-        // WARNING: For webhooks to work locally requires ngrok, but for direct redirects this works
-        const isLocal = !process.env.VERCEL_URL;
-        const baseUrl = isLocal ? 'http://127.0.0.1:5500' : siteUrl; // Assumes Live Server default port
+        // In Vercel, VERCEL_PROJECT_PRODUCTION_URL is safer, or fallback to the host header.
+        const host = req.headers.host || process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+        const protocol = host && host.includes('localhost') ? 'http' : 'https';
+        const siteUrl = host ? `${protocol}://${host}` : 'http://localhost:3000';
 
         const preferenceData = {
             items: items,
             back_urls: {
-                success: `${baseUrl}/success.html?order_id=${orderId}`,
-                failure: `${baseUrl}/index.html?payment=failed`,
-                pending: `${baseUrl}/pending.html?order_id=${orderId}`
+                success: `${siteUrl}/success.html?order_id=${orderId}`,
+                failure: `${siteUrl}/index.html?payment=failed`,
+                pending: `${siteUrl}/pending.html?order_id=${orderId}`
             },
             auto_return: 'approved',
             external_reference: orderId,
-            notification_url: `${siteUrl}/api/webhook` // This needs to be a public URL to work. Handled later.
+            notification_url: `${siteUrl}/api/webhook`
         };
 
         const response = await preference.create({ body: preferenceData });

@@ -1,5 +1,6 @@
 import { MercadoPagoConfig, Payment } from 'mercadopago';
 import { createClient } from '@supabase/supabase-js';
+import fetch from 'node-fetch'; // Required for some Vercel Node environments
 
 export default async function handler(req, res) {
     // Webhooks from MercadoPago are POST requests
@@ -88,11 +89,15 @@ export default async function handler(req, res) {
                         const callMeBotUrl = `https://api.callmebot.com/whatsapp.php?phone=${callMeBotPhone}&text=${encodedMessage}&apikey=${callMeBotApiKey}`;
 
                         try {
-                            // Vercel node fetch syntax
-                            await fetch(callMeBotUrl);
-                            console.log('WhatsApp notification sent successfully');
+                            const botRes = await fetch(callMeBotUrl);
+                            if (botRes.ok) {
+                                console.log('WhatsApp notification sent successfully');
+                            } else {
+                                const errText = await botRes.text();
+                                console.error('CallMeBot returned error:', botRes.status, errText);
+                            }
                         } catch (waError) {
-                            console.error('Failed to send WhatsApp message:', waError);
+                            console.error('Failed to execute fetch to CallMeBot:', waError);
                         }
                     }
                 }
